@@ -3,7 +3,7 @@ name: Deploy Flask App to Vercel
 on:
   push:
     branches:
-      - main  # Triggers deployment when code is pushed to main
+      - main  # Runs the workflow when code is pushed to main
 
 jobs:
   deploy:
@@ -28,4 +28,4 @@ jobs:
         run: npm install -g vercel
 
       - name: Deploy to Vercel
-        run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+        run: vercel --prod --token="${{ secrets.VERCEL_TOKEN }}"
